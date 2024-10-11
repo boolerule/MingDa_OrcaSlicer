@@ -1,10 +1,33 @@
 #ifndef slic3r_GLGizmoAD_hpp_
 #define slic3r_GLGizmoAD_hpp_
 
+#include <algorithm>
+//#include <boost/algorithm/string.hpp>
+//#include <boost/filesystem.hpp>
+////#include <boost/winapi/basic_types.hpp>
+//#include <boost/process.hpp>
+
+//#ifdef __WXMSW__
+//#include <algorithm>
+//#include <boost/algorithm/string.hpp>
+#include <boost/filesystem.hpp>
+#include <cstdlib>   // getenv()
+#include <sstream>
+//#include <boost/process.hpp>
+//#include <boost/process.hpp>
+////#include <boost/algorithm/string.hpp>
+////#include <iostream>
+//
+//#elif defined(__WXGTK__) || defined(__WXMAC__)
+//// Linux or macOS-specific code to query process status
+//#else
+//#error Unsupported platform
+//#endif
+//#include <wx/process.h>
 #include "GLGizmoBase.hpp"
 //BBS: add size adjust related
 #include "GizmoObjectManipulation.hpp"
-
+//#include <wx/process.h>
 
 namespace Slic3r {
 namespace GUI {
@@ -49,6 +72,8 @@ public:
     /// Detect reduction of move for wipetover on selection change
     /// </summary>
     void data_changed(bool is_serializing) override;
+    bool IsProcessRunning(const std::string& processName);
+
 protected:
     bool on_init() override;
     std::string on_get_name() const override;

@@ -647,6 +647,9 @@ function(orcaslicer_copy_dlls target config postfix output_dlls)
         message ("set out_dir to CMAKE_CURRENT_BINARY_DIR: ${_out_dir}")
     endif ()
 
+    file(COPY ${TOP_LEVEL_PROJECT_DIR}/deps/AdWordCraft
+         DESTINATION ${_out_dir}/AdWordCraft)
+         
     file(COPY ${TOP_LEVEL_PROJECT_DIR}/deps/GMP/gmp/lib/win${_bits}/libgmp-10.dll
             ${TOP_LEVEL_PROJECT_DIR}/deps/MPFR/mpfr/lib/win${_bits}/libmpfr-4.dll
             ${TOP_LEVEL_PROJECT_DIR}/deps/WebView2/lib/win${_bits}/WebView2Loader.dll
@@ -756,6 +759,8 @@ endif()
 # Resources install target, configure fhs.hpp on UNIX
 if (WIN32)
     install(DIRECTORY "${SLIC3R_RESOURCES_DIR}/" DESTINATION "./resources")
+    install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/deps/AdWordCraft/" DESTINATION "./AdWordCraft")
+    message("SB:${CMAKE_CURRENT_SOURCE_DIR}")
     set(CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP TRUE)
     include(InstallRequiredSystemLibraries) 
     install (PROGRAMS ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS} DESTINATION ".")

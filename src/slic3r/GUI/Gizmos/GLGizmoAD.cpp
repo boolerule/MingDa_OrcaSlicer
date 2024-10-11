@@ -70,25 +70,28 @@ void GLGizmoAD::data_changed(bool is_serializing) {
     //auto process = new wxProcess();
     //process->Redirect();
     exeDir += "/AdWordCraft/AdWordCraft.exe";
-    auto execute = wxExecute(exeDir, wxEXEC_ASYNC);
+    if (!IsProcessRunning(("AdWordCraft"))) {
+        auto execute = wxExecute(exeDir, wxEXEC_ASYNC);
 
-     // 启动外部程序
-    if (execute != 0) {
-        // 读取来自进程的输出
-        //wxInputStream* stream = process->GetInputStream();
-        //if (stream){
-        //    wxTextInputStream* textStream = new wxTextInputStream(*stream,wxT("\n"));
-        //    wxString           line;
-        //    while (!textStream->Eof()) {
-        //        line = textStream->ReadLine();
-        //        wxMessageBox(line); // 显示每一行
-        //    }
-        //    delete textStream;
-        //
-        //}
+        // 启动外部程序
+        if (execute != 0) {
 
+        }
     }
+
 }
+
+ bool GLGizmoAD::IsProcessRunning(const std::string& processName)
+{
+     //wxArrayString processes;
+     //wxProcess::GetProcesses(processes);
+
+     //for (const wxString& process : processes) {
+     //    if (process.Lower() == processName.Lower())
+     //        return true;
+     //}
+     return false;
+ }
 
 bool GLGizmoAD::on_init()
 {

@@ -79,8 +79,12 @@ std::unique_ptr<CompressedImageBuffer> compress_thumbnail_jpg(const ThumbnailDat
     info.image_width = data.width;
     info.image_height = data.height;
     info.input_components = 4;
-    info.in_color_space = JCS_EXT_RGBA;
 
+#ifdef JCS_ALPHA_EXTENSIONS
+    info.in_color_space = JCS_EXT_RGBA;
+#else
+    info.in_color_space = JCS_RGB;
+#endif
     jpeg_set_defaults(&info);
     jpeg_set_quality(&info, 85, TRUE);
     jpeg_start_compress(&info, TRUE);

@@ -57,12 +57,13 @@ static const std::vector<std::string> filament_vendors =
      "SliceWorx",              "Snapmaker",              "SnoLabs",                "Spectrum",               "SUNLU",
      "TTYT3D",                 "Tianse",                 "UltiMaker",              "Valment",                "Verbatim",
      "VO3D",                   "Voxelab",                "VOXELPLA",               "YOOPAI",                 "Yousu",
-     "Ziro",                   "Zyltech"};
+     "Ziro",                   "Zyltech",                "MINGDA3D"};
      
 static const std::vector<std::string> filament_types = {"PLA",    "rPLA",  "PLA+",      "PLA Tough", "PETG",  "ABS",    "ASA",    "FLEX",   "HIPS",   "PA",     "PACF",
                                                         "NYLON",  "PVA",   "PVB",       "PC",        "PCABS", "PCTG",   "PCCF",   "PHA",    "PP",     "PEI",    "PET",    "PETG",
                                                         "PETGCF", "PTBA",  "PTBA90A",   "PEEK",  "TPU93A", "TPU75D", "TPU",       "TPU92A", "TPU98A", "Misc",
-                                                        "TPE",    "GLAZE", "Nylon",     "CPE",   "METAL",  "ABST",   "Carbon Fiber", "SBS"};
+                                                        "TPE",    "GLAZE", "Nylon",     "CPE",   "METAL",  "ABST",   "Carbon Fiber", "SBS", "PDS", "HtPA", "PA12", "PET-GF", 
+														"PETG-HF", "S-HtPA", "S-Multi"};
 
 static const std::vector<std::string> printer_vendors = 
     {"Anker",              "Anycubic",           "Artillery",          "Bambulab",           "BIQU",
@@ -71,7 +72,7 @@ static const std::vector<std::string> printer_vendors =
      "Orca Arena Printer", "Peopoly",            "Prusa",              "Qidi",               "Raise3D",
      "RatRig",             "SecKit",             "Snapmaker",          "Sovol",              "Tronxy",
      "TwoTrees",           "UltiMaker",          "Vivedino",           "Voron",              "Voxelab",
-     "Vzbot",              "Wanhao"};
+     "Vzbot",              "Wanhao",             "MINGDA3D"};
 
 static const std::unordered_map<std::string, std::vector<std::string>> printer_model_map =
     {{"Anker",          {"Anker M5", "Anker M5 All-Metal Hot End", "Anker M5C"}},

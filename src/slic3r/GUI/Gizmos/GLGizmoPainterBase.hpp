@@ -238,10 +238,10 @@ protected:
     // BBS
     float m_cursor_height = 0.2f;
     static constexpr float CursorRadiusMin  = 0.4f; // cannot be zero
-    static constexpr float CursorRadiusMax  = 18.f;//TODO:ylg ÑÕÉ«±ä»¯×î´óÖµ
+    static constexpr float CursorRadiusMax  = 18.f;//TODO:ylg é¢œè‰²å˜åŒ–æœ€å¤§å€¼
     static constexpr float CursorRadiusStep = 0.2f;
     static constexpr float CursorHeightMin = 0.1f; // cannot be zero
-    static constexpr float CursorHeightMax = 18.f;//TODO:ylg ÑÕÉ«±ä»¯×î´óÖµ
+    static constexpr float CursorHeightMax = 18.f;//TODO:ylg é¢œè‰²å˜åŒ–æœ€å¤§å€¼
     static constexpr float CursorHeightStep = 0.2f;
 
     // For each model-part volume, store status and division of the triangles.
