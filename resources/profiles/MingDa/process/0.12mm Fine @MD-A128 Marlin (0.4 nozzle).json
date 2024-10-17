@@ -215,7 +215,7 @@
     "initial_layer_jerk": "8",
     "initial_layer_line_width": "120%",
     "initial_layer_speed": "30",
-    "inner_wall_acceleration": "2000",
+    "inner_wall_acceleration": "0",
     "inner_wall_jerk": "20",
     "inner_wall_speed": "90",
     "internal_solid_infill_line_width": "105%",

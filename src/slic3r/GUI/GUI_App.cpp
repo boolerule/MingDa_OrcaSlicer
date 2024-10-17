@@ -1919,13 +1919,7 @@ void GUI_App::init_app_config()
         else{
             boost::filesystem::path data_dir_path;
             #ifndef __linux__
-                std::string data_dir = wxStandardPaths::Get().GetUserDataDir().ToUTF8().data();
-                //TODO:ylg 为了让生成的配置文件根据软件版本分类
-                data_dir += "\\";
-                data_dir += format_display_version();
-                //BBS create folder if not exists
-                data_dir_path = boost::filesystem::path(data_dir);
-                set_data_dir(data_dir);
+ 
             #else
                 // Since version 2.3, config dir on Linux is in ${XDG_CONFIG_HOME}.
                 // https://github.com/prusa3d/PrusaSlicer/issues/2911
@@ -1936,8 +1930,9 @@ void GUI_App::init_app_config()
                 data_dir_path = boost::filesystem::path(data_dir());
             #endif
             if (!boost::filesystem::exists(data_dir_path)){
-                boost::filesystem::create_directory(data_dir_path);
+                boost::filesystem::create_directories(data_dir_path);
             }
+           
         }
 
         // Change current dirtory of application
